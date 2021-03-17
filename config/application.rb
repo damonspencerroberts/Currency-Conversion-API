@@ -8,6 +8,13 @@ Bundler.require(*Rails.groups)
 
 module RailsApiCurrencyConverter
   class Application < Rails::Application
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource '/*', :headers => :any, :methods => :create
+      end
+    end
+    
     config.generators do |generate|
       generate.assets false
       generate.helper false
@@ -16,12 +23,6 @@ module RailsApiCurrencyConverter
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
-    config.middleware.use Rack::Cors do
-      allow do
-        origins '*'
-        resource '/*', :headers => :any, :methods => :create
-      end
-    end
 
     # Configuration for the application, engines, and railties goes here.
     #
