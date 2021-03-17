@@ -12,6 +12,8 @@ class Api::V1::HistoriesController < Api::V1::BaseController
     end
   end
 
+  def show; end
+
   private
 
   def history_params
