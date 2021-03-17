@@ -8,13 +8,16 @@ Bundler.require(*Rails.groups)
 
 module RailsApiCurrencyConverter
   class Application < Rails::Application
-    config.middleware.use Rack::Cors do
+    Rails.application.config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '/*', :headers => :any, :methods => :create
+    
+        resource '*',
+          headers: :any,
+          methods: [:get, :post, :put, :patch, :delete, :options, :head]
       end
     end
-    
+
     config.generators do |generate|
       generate.assets false
       generate.helper false
