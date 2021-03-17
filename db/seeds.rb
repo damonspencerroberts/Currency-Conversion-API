@@ -11,17 +11,20 @@ history_cases = [
     amount: 15,
     init_currency: "EUR",
     wanted_currency: "USD",
-    rate: 1.2
+    rate: 1.2,
+    total: 18
   },{
     amount: 150,
     init_currency: "EUR",
     wanted_currency: "GBP",
-    rate: 0.9
+    rate: 0.9,
+    total: 135
   },{
     amount: 55.50,
     init_currency: "EUR",
     wanted_currency: "CHF",
-    rate: 1.05
+    rate: 1.05,
+    total: 58.28
   }
 ]
 

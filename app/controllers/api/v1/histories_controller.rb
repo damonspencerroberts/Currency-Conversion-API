@@ -17,6 +17,6 @@ class Api::V1::HistoriesController < Api::V1::BaseController
   private
 
   def history_params
-    params.require(:history).permit(:amount, :rate, :init_currency, :wanted_currency)
+    params.require(:history).permit(:amount, :rate, :total, :init_currency, :wanted_currency)
   end
 end
