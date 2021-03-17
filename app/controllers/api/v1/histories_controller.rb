@@ -4,7 +4,7 @@ class Api::V1::HistoriesController < Api::V1::BaseController
   end
 
   def create
-    @history = history.new(history_params)
+    @history = History.new(history_params)
     if @history.save
       render :show, status: :created
     else
